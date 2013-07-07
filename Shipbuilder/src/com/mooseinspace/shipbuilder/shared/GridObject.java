@@ -189,12 +189,12 @@ public abstract class GridObject implements Serializable
 		objConfigs.get(objConfig).imgGrid = imgGrid;
 	}
 	
-	public int getImgGridHeight()
+	public int getImgGridWidth()
 	{
 		return objConfigs.get(objConfig).imgGrid.length;
 	}
 	
-	public int getImgGridWidth()
+	public int getImgGridHeight()
 	{
 		return objConfigs.get(objConfig).imgGrid[0].length;
 	}

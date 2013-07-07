@@ -62,20 +62,71 @@ public class GridObjHelper
 	
 	public void drawGrid(GridObjImage gridImage, Vector position, String color)
 	{
-		Image shipImage = gridImage.getObjImage();
+		drawGrid(gridImage, position, color, "#0000ff");
+	}
+	
+	public void drawGrid(GridObjImage gridImage, Vector position, String color, String borderColor)
+	{
 		boolean[][] gridArray = gridImage.getGridObj().getImgGrid();
 		
 		Context2d context = canvas.getContext2d();
 		
 		context.setStrokeStyle(color);
 		
-		for (int x = 0; x < (int) shipImage.getWidth()/GRID_SIZE+1; x++)
+		for (int x = 0; x < gridImage.getGridObj().getImgGridWidth(); x++)
 		{
-			for (int y = 0; y < (int) shipImage.getHeight()/GRID_SIZE+1; y++)
+			for (int y = 0; y < gridImage.getGridObj().getImgGridHeight(); y++)
 			{
 				if (gridArray[x][y])
 				{
-					context.strokeRect(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y, GRID_SIZE, GRID_SIZE);
+					//context.strokeRect(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y, GRID_SIZE, GRID_SIZE);
+					//Top line
+					context.beginPath();
+					context.moveTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y);
+					
+					if (y > 0 && gridArray[x][y-1])
+						context.setStrokeStyle(color);
+					else
+						context.setStrokeStyle(borderColor);
+					
+					context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
+					context.stroke();
+					
+					//Right Line
+					context.beginPath();
+					context.moveTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
+					
+					if (x < gridImage.getGridObj().getImgGridWidth()-1 && gridArray[x+1][y])
+						context.setStrokeStyle(color);
+					else
+						context.setStrokeStyle(borderColor);
+					
+					context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y + GRID_SIZE);
+					context.stroke();
+					
+					//Bottom Line
+					context.beginPath();
+					context.moveTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y + GRID_SIZE);
+					
+					if (y < gridImage.getGridObj().getImgGridHeight()-1 && gridArray[x][y+1])
+						context.setStrokeStyle(color);
+					else
+						context.setStrokeStyle(borderColor);
+					
+					context.lineTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y + GRID_SIZE);
+					context.stroke();
+					
+					//Left Line
+					context.beginPath();
+					context.moveTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y + GRID_SIZE);
+					
+					if (x >0 && gridArray[x-1][y])
+						context.setStrokeStyle(color);
+					else
+						context.setStrokeStyle(borderColor);
+					
+					context.lineTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y);
+					context.stroke();
 				}
 			}
 		}

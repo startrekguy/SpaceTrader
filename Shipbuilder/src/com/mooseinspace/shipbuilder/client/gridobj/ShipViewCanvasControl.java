@@ -87,9 +87,9 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 		else
 		{
 			if (checkGrids())
-				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#00ff00");
+				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#00ff00", "#00ff00");
 			else
-				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#ff0000");
+				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#ff0000", "#ff0000");
 		}
 		
 		
@@ -115,11 +115,19 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 		}
 		else
 		{
+			for (int x = gridX; x < maxWidth; x++)
+			{
+				for (int y = gridY; y < maxHeight; y++)
+				{
+					if (!(!systemGrid[x-gridX][y-gridY] || shipGrid[x][y]))
+					{
+						return false;
+					}
+				}
+			}
 			return true;
 		}
 		
-		
-		//for (int x = 0; x < shipImg.getGridObj().getImgGridWidth(); x++)
 	}
 
 	@Override
