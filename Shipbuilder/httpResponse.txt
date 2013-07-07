@@ -1,0 +1,149 @@
+6477: URL_REQUEST
+http://ammo-box:8888/_ah/upload/aglub19hcHBfaWRyGwsSFV9fQmxvYlVwbG9hZFNlc3Npb25fXxg6DA
+Start Time: 2013-02-13 18:46:07.536
+
+t=1360799167536 [st=    0] +REQUEST_ALIVE  [dt=22742]
+t=1360799167537 [st=    1]   +URL_REQUEST_START_JOB  [dt=9921]
+                              --> load_flags = 69271681 (ENABLE_LOAD_TIMING | MAYBE_USER_GESTURE | SUB_FRAME | VALIDATE_CACHE | VERIFY_EV_CERT)
+                              --> method = "POST"
+                              --> priority = 4
+                              --> upload_id = "1360799167528606"
+                              --> url = "http://ammo-box:8888/_ah/upload/aglub19hcHBfaWRyGwsSFV9fQmxvYlVwbG9hZFNlc3Npb25fXxg6DA"
+t=1360799167537 [st=    1]      HTTP_CACHE_GET_BACKEND  [dt=0]
+t=1360799167537 [st=    1]      HTTP_CACHE_OPEN_ENTRY  [dt=1]
+                                --> net_error = -2 (ERR_FAILED)
+t=1360799167538 [st=    2]      HTTP_CACHE_CREATE_ENTRY  [dt=0]
+t=1360799167538 [st=    2]      HTTP_CACHE_ADD_TO_ENTRY  [dt=0]
+t=1360799167538 [st=    2]     +HTTP_STREAM_REQUEST  [dt=4]
+t=1360799167542 [st=    6]        HTTP_STREAM_REQUEST_BOUND_TO_JOB
+                                  --> source_dependency = 6487 (HTTP_STREAM_JOB)
+t=1360799167542 [st=    6]     -HTTP_STREAM_REQUEST
+t=1360799167542 [st=    6]     +HTTP_TRANSACTION_SEND_REQUEST  [dt=1]
+t=1360799167542 [st=    6]        HTTP_TRANSACTION_SEND_REQUEST_HEADERS
+                                  --> POST /_ah/upload/aglub19hcHBfaWRyGwsSFV9fQmxvYlVwbG9hZFNlc3Npb25fXxg6DA HTTP/1.1
+                                      Host: ammo-box:8888
+                                      Connection: keep-alive
+                                      Content-Length: 19820
+                                      Cache-Control: max-age=0
+                                      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+                                      Origin: http://127.0.0.1:8888
+                                      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17
+                                      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary6zEAViJeUZ4ohfQr
+                                      Referer: http://127.0.0.1:8888/Shipbuilder.html?gwt.codesvr=127.0.0.1:9997
+                                      Accept-Encoding: gzip,deflate,sdch
+                                      Accept-Language: en-US,en;q=0.8
+                                      Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+t=1360799167542 [st=    6]        HTTP_TRANSACTION_SEND_REQUEST_BODY
+                                  --> did_merge = false
+                                  --> is_chunked = false
+                                  --> length = 19820
+t=1360799167543 [st=    7]     -HTTP_TRANSACTION_SEND_REQUEST
+t=1360799167543 [st=    7]     +HTTP_TRANSACTION_READ_HEADERS  [dt=9914]
+t=1360799167543 [st=    7]        HTTP_STREAM_PARSER_READ_HEADERS  [dt=9914]
+t=1360799177457 [st= 9921]        HTTP_TRANSACTION_READ_RESPONSE_HEADERS
+                                  --> HTTP/1.1 302 Found
+                                      Location: http://ammo-box:8888/shipbuilder/FileUpload?gwt.codesvr=127.0.0.1:9997&shipHullName=Look2
+                                      Content-Length: 0
+                                      Server: Jetty(6.1.x)
+t=1360799177457 [st= 9921]     -HTTP_TRANSACTION_READ_HEADERS
+t=1360799177457 [st= 9921]      HTTP_CACHE_WRITE_INFO  [dt=0]
+t=1360799177457 [st= 9921]      HTTP_CACHE_WRITE_DATA  [dt=0]
+t=1360799177457 [st= 9921]      HTTP_CACHE_WRITE_INFO  [dt=0]
+t=1360799177458 [st= 9922]      URL_REQUEST_REDIRECTED
+                                --> location = "http://ammo-box:8888/shipbuilder/FileUpload?gwt.codesvr=127.0.0.1:9997&shipHullName=Look2"
+t=1360799177458 [st= 9922]   -URL_REQUEST_START_JOB
+t=1360799177458 [st= 9922]    URL_REQUEST_START_JOB  [dt=0]
+                              --> load_flags = 69271681 (ENABLE_LOAD_TIMING | MAYBE_USER_GESTURE | SUB_FRAME | VALIDATE_CACHE | VERIFY_EV_CERT)
+                              --> method = "GET"
+                              --> priority = 4
+                              --> url = "http://ammo-box:8888/shipbuilder/FileUpload?gwt.codesvr=127.0.0.1:9997&shipHullName=Look2"
+t=1360799177458 [st= 9922]   +URL_REQUEST_START_JOB  [dt=12800]
+                              --> load_flags = 69271681 (ENABLE_LOAD_TIMING | MAYBE_USER_GESTURE | SUB_FRAME | VALIDATE_CACHE | VERIFY_EV_CERT)
+                              --> method = "GET"
+                              --> priority = 4
+                              --> url = "http://ammo-box:8888/shipbuilder/FileUpload?gwt.codesvr=127.0.0.1:9997&shipHullName=Look2"
+t=1360799177459 [st= 9923]      HTTP_CACHE_GET_BACKEND  [dt=0]
+t=1360799177459 [st= 9923]      HTTP_CACHE_OPEN_ENTRY  [dt=2]
+                                --> net_error = -2 (ERR_FAILED)
+t=1360799177461 [st= 9925]      HTTP_CACHE_CREATE_ENTRY  [dt=0]
+t=1360799177461 [st= 9925]      HTTP_CACHE_ADD_TO_ENTRY  [dt=0]
+t=1360799177462 [st= 9926]     +HTTP_STREAM_REQUEST  [dt=0]
+t=1360799177462 [st= 9926]        HTTP_STREAM_REQUEST_BOUND_TO_JOB
+                                  --> source_dependency = 6499 (HTTP_STREAM_JOB)
+t=1360799177462 [st= 9926]     -HTTP_STREAM_REQUEST
+t=1360799177462 [st= 9926]     +HTTP_TRANSACTION_SEND_REQUEST  [dt=1]
+t=1360799177462 [st= 9926]        HTTP_TRANSACTION_SEND_REQUEST_HEADERS
+                                  --> GET /shipbuilder/FileUpload?gwt.codesvr=127.0.0.1:9997&shipHullName=Look2 HTTP/1.1
+                                      Host: ammo-box:8888
+                                      Connection: keep-alive
+                                      Cache-Control: max-age=0
+                                      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+                                      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17
+                                      Referer: http://127.0.0.1:8888/Shipbuilder.html?gwt.codesvr=127.0.0.1:9997
+                                      Accept-Encoding: gzip,deflate,sdch
+                                      Accept-Language: en-US,en;q=0.8
+                                      Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+t=1360799177463 [st= 9927]     -HTTP_TRANSACTION_SEND_REQUEST
+t=1360799177463 [st= 9927]     +HTTP_TRANSACTION_READ_HEADERS  [dt=12794]
+t=1360799177463 [st= 9927]        HTTP_STREAM_PARSER_READ_HEADERS  [dt=12794]
+t=1360799190257 [st=22721]        HTTP_TRANSACTION_READ_RESPONSE_HEADERS
+                                  --> HTTP/1.1 302 Found
+                                      Location: http://ammo-box:8888/_ah/login?continue=http%3A%2F%2Fammo-box%3A8888%2Fshipbuilder%2FFileUpload%3Fgwt.codesvr%3D127.0.0.1%3A9997%26shipHullName%3DLook2
+                                      Content-Length: 0
+                                      Server: Jetty(6.1.x)
+t=1360799190257 [st=22721]     -HTTP_TRANSACTION_READ_HEADERS
+t=1360799190257 [st=22721]      HTTP_CACHE_WRITE_INFO  [dt=0]
+t=1360799190257 [st=22721]      HTTP_CACHE_WRITE_DATA  [dt=0]
+t=1360799190257 [st=22721]      HTTP_CACHE_WRITE_INFO  [dt=0]
+t=1360799190258 [st=22722]      URL_REQUEST_REDIRECTED
+                                --> location = "http://ammo-box:8888/_ah/login?continue=http%3A%2F%2Fammo-box%3A8888%2Fshipbuilder%2FFileUpload%3Fgwt.codesvr%3D127.0.0.1%3A9997%26shipHullName%3DLook2"
+t=1360799190258 [st=22722]   -URL_REQUEST_START_JOB
+t=1360799190259 [st=22723]    URL_REQUEST_START_JOB  [dt=1]
+                              --> load_flags = 69271681 (ENABLE_LOAD_TIMING | MAYBE_USER_GESTURE | SUB_FRAME | VALIDATE_CACHE | VERIFY_EV_CERT)
+                              --> method = "GET"
+                              --> priority = 4
+                              --> url = "http://ammo-box:8888/_ah/login?continue=http%3A%2F%2Fammo-box%3A8888%2Fshipbuilder%2FFileUpload%3Fgwt.codesvr%3D127.0.0.1%3A9997%26shipHullName%3DLook2"
+t=1360799190260 [st=22724]   +URL_REQUEST_START_JOB  [dt=18]
+                              --> load_flags = 69271681 (ENABLE_LOAD_TIMING | MAYBE_USER_GESTURE | SUB_FRAME | VALIDATE_CACHE | VERIFY_EV_CERT)
+                              --> method = "GET"
+                              --> priority = 4
+                              --> url = "http://ammo-box:8888/_ah/login?continue=http%3A%2F%2Fammo-box%3A8888%2Fshipbuilder%2FFileUpload%3Fgwt.codesvr%3D127.0.0.1%3A9997%26shipHullName%3DLook2"
+t=1360799190260 [st=22724]      HTTP_CACHE_GET_BACKEND  [dt=0]
+t=1360799190260 [st=22724]      HTTP_CACHE_OPEN_ENTRY  [dt=1]
+                                --> net_error = -2 (ERR_FAILED)
+t=1360799190261 [st=22725]      HTTP_CACHE_CREATE_ENTRY  [dt=0]
+t=1360799190261 [st=22725]      HTTP_CACHE_ADD_TO_ENTRY  [dt=0]
+t=1360799190261 [st=22725]     +HTTP_STREAM_REQUEST  [dt=1]
+t=1360799190262 [st=22726]        HTTP_STREAM_REQUEST_BOUND_TO_JOB
+                                  --> source_dependency = 6513 (HTTP_STREAM_JOB)
+t=1360799190262 [st=22726]     -HTTP_STREAM_REQUEST
+t=1360799190262 [st=22726]     +HTTP_TRANSACTION_SEND_REQUEST  [dt=0]
+t=1360799190262 [st=22726]        HTTP_TRANSACTION_SEND_REQUEST_HEADERS
+                                  --> GET /_ah/login?continue=http%3A%2F%2Fammo-box%3A8888%2Fshipbuilder%2FFileUpload%3Fgwt.codesvr%3D127.0.0.1%3A9997%26shipHullName%3DLook2 HTTP/1.1
+                                      Host: ammo-box:8888
+                                      Connection: keep-alive
+                                      Cache-Control: max-age=0
+                                      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+                                      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17
+                                      Referer: http://127.0.0.1:8888/Shipbuilder.html?gwt.codesvr=127.0.0.1:9997
+                                      Accept-Encoding: gzip,deflate,sdch
+                                      Accept-Language: en-US,en;q=0.8
+                                      Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+t=1360799190262 [st=22726]     -HTTP_TRANSACTION_SEND_REQUEST
+t=1360799190262 [st=22726]     +HTTP_TRANSACTION_READ_HEADERS  [dt=15]
+t=1360799190262 [st=22726]        HTTP_STREAM_PARSER_READ_HEADERS  [dt=15]
+t=1360799190277 [st=22741]        HTTP_TRANSACTION_READ_RESPONSE_HEADERS
+                                  --> HTTP/1.1 200 OK
+                                      Content-Type: text/html; charset=iso-8859-1
+                                      Content-Length: 898
+                                      Server: Jetty(6.1.x)
+t=1360799190277 [st=22741]     -HTTP_TRANSACTION_READ_HEADERS
+t=1360799190277 [st=22741]      HTTP_CACHE_WRITE_INFO  [dt=1]
+t=1360799190278 [st=22742]      HTTP_CACHE_WRITE_DATA  [dt=0]
+t=1360799190278 [st=22742]      HTTP_CACHE_WRITE_INFO  [dt=0]
+t=1360799190278 [st=22742]   -URL_REQUEST_START_JOB
+t=1360799190278 [st=22742]    HTTP_TRANSACTION_READ_BODY  [dt=0]
+t=1360799190278 [st=22742]    HTTP_CACHE_WRITE_DATA  [dt=0]
+t=1360799190278 [st=22742]    HTTP_TRANSACTION_READ_BODY  [dt=0]
+t=1360799190278 [st=22742]    HTTP_CACHE_WRITE_DATA  [dt=0]
+t=1360799190278 [st=22742] -REQUEST_ALIVE

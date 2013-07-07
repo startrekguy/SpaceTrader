@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<properties>
+		<property>
+			<name>cargo_space</name>
+			<unit>Cargo Space</unit>
+			<unit_abv>CS</unit_abv>
+		</property>
+		<property>
+			<name>energy_usage</name>
+			<unit>Kilowatts</unit>
+			<unit_abv>kW</unit_abv>
+		</property>
+		<property>
+			<name>energy_production</name>
+			<unit>Kilowatts</unit>
+			<unit_abv>kW</unit_abv>
+		</property>
+		<property>
+			<name>fuel_storage</name>
+			<unit>Liters</unit>
+			<unit_abv>L</unit_abv>
+		</property>
+		<property>
+			<name>fuel_usage</name>
+			<unit>Liters per Hour</unit>
+			<unit_abv>L/h</unit_abv>
+		</property>
+		<property>
+			<name>sublight_impulse</name>
+			<unit>Newton Seconds</unit>
+			<unit_abv>Ns</unit_abv>
+		</property>
+	</properties>
+	<systems>
+		<system>
+			<name>Cargo Bay Small</name>
+			<imageURL>images\systems\CargoBaySmall.png</imageURL>
+			<properties>
+				<property name="cargo_space">1</property>
+			</properties>
+			<type>Cargo Bay</type>
+		</system>
+	</systems>
+</root>

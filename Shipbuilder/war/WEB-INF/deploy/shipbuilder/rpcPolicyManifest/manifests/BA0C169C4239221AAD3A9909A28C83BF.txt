@@ -1,0 +1,2 @@
+serviceClass: com.mooseinspace.shipbuilder.client.loaders.AdminService
+path: 01588115071F7B942876B66C76DB1FA0.gwt.rpc

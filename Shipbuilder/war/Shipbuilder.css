@@ -1,0 +1,150 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+/** Most GWT widgets already have a style name defined */
+/** Set ids using widget.getElement().setId("idOfElement") */
+.blackBack {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: center;
+	background-color: Black;
+}
+.title {
+	color: #ff9900;
+	font-variant: small-caps;
+	font-size: 36px;
+	font-family: Terminal, Lucida Console, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+.centerBox {
+	padding: 5px 15px;
+	border: medium solid cadetblue;
+	background-color: #99cccc;
+}
+.label {
+	text-align: left;
+}
+.textBox {
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid mediumblue;
+	font-variant: small-caps;
+	font-family: Terminal, sans-serif;
+	background-color: lavender;
+}
+.button {
+	color: #ccffff;
+	border: medium solid cadetblue;
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #003366;
+	cursor: default;
+}
+div {
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+}
+.menuBar {
+	color: #ccffff;
+	margin: 4px;
+	border: medium solid cadetblue;
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #003366;
+	cursor: default;
+}
+.popupBack {
+	border: medium solid cadetblue;
+	text-align: center;
+	background-color: #99cccc;
+}
+.warningLabel {
+	color: Red;
+	font-variant: small-caps;
+	font-size: 14px;
+	font-family: Terminal, Lucida Console, sans-serif;
+}
+.gridObjCanvas {
+	padding-right: 5px;
+	border-right: medium solid cadetblue;
+	border-bottom: medium solid cadetblue;
+	border-left: cadetblue;
+}
+.tabPanel 
+{
+	color: #ccffff;
+	border-top: medium cadetblue;
+	border-right: medium solid cadetblue;
+	border-bottom: medium solid cadetblue;
+	border-left: medium solid cadetblue;
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+	background-color: #003366;
+}
+.gwt-TabLayoutPanel 
+{
+	border-top: medium cadetblue;
+	border-right: medium solid cadetblue;
+	border-bottom: medium solid cadetblue;
+	border-left: medium solid cadetblue;
+	background-color: #000000;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab 
+{
+	color: #ccffff;
+	border-top: medium solid cadetblue;
+	border-right: medium solid cadetblue;
+	border-bottom: medium cadetblue;
+	border-left: medium solid cadetblue;
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #003366;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs 
+{
+	border-top: medium cadetblue;
+	border-right: medium solid cadetblue;
+	border-bottom: medium solid cadetblue;
+	border-left: medium cadetblue;
+	background-color: #000000;
+}
+.hullcell 
+{
+	color: #ccffff;
+	margin: 5px;
+	padding: 3px;
+	border: medium solid cadetblue;
+	font-variant: small-caps;
+	font-family: Terminal, Lucida Console, sans-serif;
+	vertical-align: middle;
+	text-align: left;
+	background-color: #003366;
+	cursor: default;
+}
+.smallTitle 
+{
+	color: #ff9900;
+	font-variant: small-caps;
+	font-size: 18px;
+	font-style: italic;
+	font-family: Terminal, Lucida Console, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}

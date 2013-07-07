@@ -1,0 +1,2 @@
+serviceClass: com.mooseinspace.shipbuilder.client.loaders.GetUserService
+path: 4B5B0E6562AFEA26B2094B585A789DA5.gwt.rpc
