@@ -1,2 +1,0 @@
-serviceClass: com.mooseinspace.shipbuilder.client.loaders.BlobService
-path: 4780A360AD12F50B1AB71D7F3F806214.gwt.rpc

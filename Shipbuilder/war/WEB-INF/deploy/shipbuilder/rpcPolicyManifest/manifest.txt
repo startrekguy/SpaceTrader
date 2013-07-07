@@ -1,5 +1,0 @@
-# Module shipbuilder
-# RPC service class, partial path of RPC policy file
-com.mooseinspace.shipbuilder.client.loaders.AdminService, 01588115071F7B942876B66C76DB1FA0.gwt.rpc
-com.mooseinspace.shipbuilder.client.loaders.GetUserService, 4B5B0E6562AFEA26B2094B585A789DA5.gwt.rpc
-com.mooseinspace.shipbuilder.client.loaders.BlobService, 4780A360AD12F50B1AB71D7F3F806214.gwt.rpc

@@ -5,19 +5,19 @@
 *.war
 
 # gwt caches and compiled units #
-war/gwt_bree/
-gwt-unitCache/
-war/shipbuilder/
-test-classes/
-www-test/
+Shipbuilder/war/gwt_bree/
+Shipbuilder/gwt-unitCache/
+Shipbuilder/war/shipbuilder/
+Shipbuilder/test-classes/
+Shipbuilder/www-test/
 
 # boilerplate generated classes #
-.apt_generated/
+Shipbuilder/.apt_generated/
 
 # more caches and things from deploy #
-war/WEB-INF/deploy/
-war/WEB-INF/classes/
+Shipbuilder/war/WEB-INF/deploy/
+Shipbuilder/war/WEB-INF/classes/
 
 # App Engine Generated Files #
 
-war/WEB-INF/appengine-generated
+Shipbuilder/war/WEB-INF/appengine-generated/
