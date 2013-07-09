@@ -45,6 +45,8 @@ public class SpaceShip implements SubGridAttachable
 	{
 		this.attachedSystems = new ArrayList<ShipSystem>();
 		systemLocations = new Integer[shipHull.getImgGridWidth()][shipHull.getImgGridHeight()];
+		systemLocX = new ArrayList<Integer>();
+		systemLocY = new ArrayList<Integer>();
 		
 		for (int x = 0; x < shipHull.getImgGridWidth(); x++)
 		{
@@ -74,7 +76,7 @@ public class SpaceShip implements SubGridAttachable
 		{
 			for (int y = 0; y < newSystem.getImgGridHeight(); y++)
 			{
-				if (!newSystemGrid[x][y])
+				if (newSystemGrid[x][y])
 				{
 					if (systemLocations[x+gridX][y+gridY] > -1)
 					{
@@ -161,6 +163,14 @@ public class SpaceShip implements SubGridAttachable
 		return allProperties;
 	}
 	
+	/**
+	 * 
+	 * @return attachedSystems a list of all the systems attached to this ship
+	 */
+	public List<ShipSystem> getAttachedSystems()
+	{
+		return attachedSystems;
+	}
 	
 	/**
 	 * @return the shipHull
@@ -173,10 +183,10 @@ public class SpaceShip implements SubGridAttachable
 	/**
 	 * @param shipHull the shipHull to set
 	 */
-	public void setShipHull(ShipHull shipHull) 
-	{
-		this.shipHull = shipHull;
-	}
+//	public void setShipHull(ShipHull shipHull) 
+//	{
+//		this.shipHull = shipHull;
+//	}
 
 	/**
 	 * @return the owner

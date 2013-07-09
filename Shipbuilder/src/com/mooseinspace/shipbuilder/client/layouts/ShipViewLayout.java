@@ -24,6 +24,7 @@ import com.mooseinspace.shipbuilder.client.layouts.popup.FileLoadPopup;
 import com.mooseinspace.shipbuilder.client.layouts.popup.HullListPopup;
 import com.mooseinspace.shipbuilder.shared.PlayerInfo;
 import com.mooseinspace.shipbuilder.shared.ShipHull;
+import com.mooseinspace.shipbuilder.shared.SpaceShip;
 import com.mooseinspace.shipbuilder.shared.Vector;
 import com.mooseinspace.shipbuilder.shared.systems.ShipSystem;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
@@ -185,7 +186,7 @@ public class ShipViewLayout implements PageLayout {
 	    			//canvas.setPixelSize(selected.getObjImage().getWidth(), selected.getObjImage().getHeight());
 	    			Vector centerShip = new Vector(canvas.getOffsetWidth()/2 - selected.getObjImage().getWidth()/2,
 	    										   canvas.getOffsetHeight()/2 - selected.getObjImage().getHeight()/2);
-	    			canvasHelper.setShipHull(selected, centerShip);
+	    			canvasHelper.setShipHull(new SpaceShip(selected), centerShip);
 	    		}
 	    	}
 	    });

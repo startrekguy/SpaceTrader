@@ -13,6 +13,7 @@ import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.mooseinspace.shipbuilder.shared.GridObject;
 import com.mooseinspace.shipbuilder.shared.ShipHull;
+import com.mooseinspace.shipbuilder.shared.SpaceShip;
 import com.mooseinspace.shipbuilder.shared.Vector;
 import com.mooseinspace.shipbuilder.shared.systems.ShipSystem;
 
@@ -26,6 +27,8 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 	private Vector				shipPos;
 	
 	private GridObjImage 		shipSystem;
+	
+	private SpaceShip			spaceShip;
 	
 	private int 				lastMouseGridPosX = 0;
 	private int					lastMouseGridPosY = 0;
@@ -46,9 +49,10 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 		canvas.addMouseMoveHandler(this);
 	}
 	
-	public void setShipHull(ShipHull newObj, Vector pos)
+	public void setShipHull(SpaceShip newShip, Vector pos)
 	{
-		shipImg = new GridObjImage(newObj);
+		spaceShip = newShip;
+		shipImg = new GridObjImage(newShip.getShipHull());
 		shipPos = pos;
 		
 		draw();
@@ -71,7 +75,7 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 			context.setFillStyle("#000033");
 			context.fillRect(shipPos.x, shipPos.y, shipImg.getObjImage().getWidth(), shipImg.getObjImage().getHeight());
 			
-			//gridObjHelp.draw(shipImg, shipPos, true);
+			gridObjHelp.draw(shipImg, shipPos, true);
 			gridObjHelp.drawGrid(shipImg, shipPos, "#666666");
 			
 			context.setStrokeStyle("#ffffff");
