@@ -27,6 +27,7 @@ public class SpaceShip implements SubGridAttachable
 	
 	@Persistent
 	List<Integer> systemLocX;
+
 	@Persistent
 	List<Integer> systemLocY;
 	
@@ -170,6 +171,20 @@ public class SpaceShip implements SubGridAttachable
 	public List<ShipSystem> getAttachedSystems()
 	{
 		return attachedSystems;
+	}
+	
+	/**
+	 * @return the systemLocX
+	 */
+	public List<Integer> getSystemLocX() {
+		return systemLocX;
+	}
+
+	/**
+	 * @return the systemLocY
+	 */
+	public List<Integer> getSystemLocY() {
+		return systemLocY;
 	}
 	
 	/**
