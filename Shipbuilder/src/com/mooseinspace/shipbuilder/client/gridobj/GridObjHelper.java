@@ -36,7 +36,7 @@ public class GridObjHelper
 			}
 			
 			Context2d context = canvas.getContext2d();
-			context.clearRect(position.x, position.y, gridImage.getGridObj().getImgWidth(), gridImage.getGridObj().getImgHeight());
+			//context.clearRect(position.x, position.y, gridImage.getGridObj().getImgWidth(), gridImage.getGridObj().getImgHeight());
 		
 			context.drawImage(ImageElement.as(gridImage.getObjImage().getElement()), position.x, position.y);
 			
@@ -80,29 +80,39 @@ public class GridObjHelper
 				if (gridArray[x][y])
 				{
 					//context.strokeRect(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y, GRID_SIZE, GRID_SIZE);
-					//Top line
-					context.beginPath();
-					context.moveTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y);
+					
 					
 					if (y > 0 && gridArray[x][y-1])
 						context.setStrokeStyle(color);
 					else
+					{
 						context.setStrokeStyle(borderColor);
 					
-					context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
-					context.stroke();
-					
-					//Right Line
-					context.beginPath();
-					context.moveTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
+						//Top line
+						context.beginPath();
+						context.moveTo(x*GRID_SIZE+position.x, y*GRID_SIZE+position.y);
+						
+						context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
+						context.stroke();
+
+						
+					}
 					
 					if (x < gridImage.getGridObj().getImgGridWidth()-1 && gridArray[x+1][y])
 						context.setStrokeStyle(color);
 					else
+					{
 						context.setStrokeStyle(borderColor);
 					
-					context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y + GRID_SIZE);
-					context.stroke();
+						//Right Line
+						context.beginPath();
+						context.moveTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y);
+						
+						context.lineTo(x*GRID_SIZE+position.x + GRID_SIZE, y*GRID_SIZE+position.y + GRID_SIZE);
+						context.stroke();
+
+						
+					}
 					
 					//Bottom Line
 					context.beginPath();

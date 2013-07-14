@@ -13,6 +13,7 @@ import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.event.dom.client.MouseUpEvent;
 import com.google.gwt.event.dom.client.MouseUpHandler;
+import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.mooseinspace.shipbuilder.shared.GridObject;
 import com.mooseinspace.shipbuilder.shared.ShipHull;
 import com.mooseinspace.shipbuilder.shared.SpaceShip;
@@ -22,8 +23,9 @@ import com.mooseinspace.shipbuilder.shared.systems.ShipSystem;
 public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler, MouseOutHandler, MouseUpHandler
 {
 	private Canvas 				canvas;
-	private Context2d 			context;
-	private GridObjHelper		gridObjHelp;
+	private Context2d 			shipContext;
+	
+	private GridObjHelper		shipObjHelp;
 	
 	private GridObjImage 		shipImg;
 	private Vector				shipPos;
@@ -37,19 +39,20 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 	
 	private boolean				mouseHover = false;
 	
-	public ShipViewCanvasControl(Canvas canvas)
+	public ShipViewCanvasControl(Canvas shipCanvas, AbsolutePanel picArea)
 	{
 		
-		gridObjHelp = new GridObjHelper(canvas);
+		shipObjHelp = new GridObjHelper(shipCanvas);
+		
 		shipPos = new Vector(0,0);
 		
-		this.canvas = canvas;
-		this.context = canvas.getContext2d();
+		this.canvas = shipCanvas;
+		this.shipContext = shipCanvas.getContext2d();
 		
-		canvas.addMouseOverHandler(this);
-		canvas.addMouseOutHandler(this);
-		canvas.addMouseMoveHandler(this);
-		canvas.addMouseUpHandler(this);
+		shipCanvas.addMouseOverHandler(this);
+		shipCanvas.addMouseOutHandler(this);
+		shipCanvas.addMouseMoveHandler(this);
+		shipCanvas.addMouseUpHandler(this);
 	}
 	
 	public void setShipHull(SpaceShip newShip, Vector pos)
@@ -71,14 +74,14 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 	
 	public void draw()
 	{
-		context.clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceWidth());
+		shipContext.clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceWidth());
 		
 		if (shipImg != null)
 		{
-			context.setFillStyle("#000033");
-			context.fillRect(shipPos.x, shipPos.y, shipImg.getObjImage().getWidth(), shipImg.getObjImage().getHeight());
+			//shipContext.setFillStyle("#000033");
+			//shipContext.fillRect(shipPos.x, shipPos.y, shipImg.getObjImage().getWidth(), shipImg.getObjImage().getHeight());
 			
-			gridObjHelp.draw(shipImg, shipPos, false);
+			shipObjHelp.draw(shipImg, shipPos, false);
 			
 			List<ShipSystem> attachedSystems = spaceShip.getAttachedSystems();
 			Vector systemPos = new Vector();
@@ -92,27 +95,27 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 				
 				attachedImg = imgFact.getGridObjImage(attachedSystems.get(i));
 				
-				gridObjHelp.draw(attachedImg, systemPos, false);
+				shipObjHelp.draw(attachedImg, systemPos, false);
 			}
 			
-			gridObjHelp.drawGrid(shipImg, shipPos, "#666666");
+			shipObjHelp.drawGrid(shipImg, shipPos, "#666666");
 			
-			context.setStrokeStyle("#ffffff");
-			context.strokeText("x: " + (int)((lastMouseGridPosX - shipPos.x) / GridObjHelper.GRID_SIZE) +
+			shipContext.setStrokeStyle("#ffffff");
+			shipContext.strokeText("x: " + (int)((lastMouseGridPosX - shipPos.x) / GridObjHelper.GRID_SIZE) +
 							  " y: " + (int)((lastMouseGridPosY - shipPos.y) / GridObjHelper.GRID_SIZE), 650, 700);
 		}
 		
 		if (shipSystem == null)
 		{
-			context.setFillStyle("red");
-			context.fillRect(lastMouseGridPosX, lastMouseGridPosY, GridObjHelper.GRID_SIZE, GridObjHelper.GRID_SIZE);
+			shipContext.setFillStyle("red");
+			shipContext.fillRect(lastMouseGridPosX, lastMouseGridPosY, GridObjHelper.GRID_SIZE, GridObjHelper.GRID_SIZE);
 		}
 		else
 		{
 			if (checkGrids())
-				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#00ff00", "#00ff00");
+				shipObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#00ff00", "#00ff00");
 			else
-				gridObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#ff0000", "#ff0000");
+				shipObjHelp.drawGrid(shipSystem, new Vector(lastMouseGridPosX, lastMouseGridPosY), "#ff0000", "#ff0000");
 		}
 		
 		
@@ -138,6 +141,9 @@ public class ShipViewCanvasControl implements MouseOverHandler, MouseMoveHandler
 		}
 		else
 		{
+			if (!spaceShip.checkNewSubgrid(shipSystem.getGridObj(), gridX, gridY))
+				return false;
+			
 			for (int x = gridX; x < maxWidth; x++)
 			{
 				for (int y = gridY; y < maxHeight; y++)

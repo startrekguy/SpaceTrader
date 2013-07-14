@@ -71,7 +71,15 @@ public class SpaceShip implements SubGridAttachable
 			return false;
 		}
 				
-		boolean[][] newSystemGrid = newSystem.getImgGrid();
+		if (!checkNewSubgrid(newSubGrid, gridX, gridY))
+			return false;
+		
+		attachedSystems.add(newSystem);
+		systemLocX.add(gridX);
+		systemLocY.add(gridY);
+		
+		int systemNum = attachedSystems.size() - 1;
+		boolean[][] newSystemGrid = newSubGrid.getImgGrid();
 		
 		for (int x = 0; x < newSystem.getImgGridWidth(); x++)
 		{
@@ -79,27 +87,28 @@ public class SpaceShip implements SubGridAttachable
 			{
 				if (newSystemGrid[x][y])
 				{
-					if (systemLocations[x+gridX][y+gridY] > -1)
-					{
-						return false;
-					}
+					systemLocations[x+gridX][y+gridY] = systemNum;
 				}
 			}
 		}
 		
-		attachedSystems.add(newSystem);
-		systemLocX.add(gridX);
-		systemLocY.add(gridY);
+		return true;
+	}
+	
+	public boolean checkNewSubgrid(GridObject newSubGrid, int gridX, int gridY)
+	{
+		boolean[][] newSystemGrid = newSubGrid.getImgGrid();
 		
-		int systemNum = attachedSystems.size() - 1;
-		
-		for (int x = 0; x < newSystem.getImgGridWidth(); x++)
+		for (int x = 0; x < newSubGrid.getImgGridWidth(); x++)
 		{
-			for (int y = 0; y < newSystem.getImgGridHeight(); y++)
+			for (int y = 0; y < newSubGrid.getImgGridHeight(); y++)
 			{
-				if (!newSystemGrid[x][y])
+				if (newSystemGrid[x][y])
 				{
-					systemLocations[x+gridX][y+gridY] = systemNum;
+					if (systemLocations[x+gridX][y+gridY] > -1)
+					{
+						return false;
+					}
 				}
 			}
 		}

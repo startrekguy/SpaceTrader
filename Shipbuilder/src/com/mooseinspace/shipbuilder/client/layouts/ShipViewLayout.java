@@ -92,7 +92,7 @@ public class ShipViewLayout implements PageLayout {
 		verticalPanel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		verticalPanel_1.add(verticalPanel);
 		verticalPanel.setStyleName("blackBack");
-		verticalPanel.setSize("750px", "100%");
+		verticalPanel.setSize("1000px", "100%");
 		
 		MenuBar menuBar = new MenuBar(false);
 		menuBar.setStyleName("gridObjCanvas");
@@ -127,18 +127,19 @@ public class ShipViewLayout implements PageLayout {
 		
 		AbsolutePanel absolutePanel = new AbsolutePanel();
 		horizontalPanel.add(absolutePanel);
+		absolutePanel.setSize("750px", "750px");
 		
-		final Canvas canvas = Canvas.createIfSupported();
-		absolutePanel.add(canvas);
-		canvas.setStyleName("gridObjCanvas");
-		canvas.setSize("750px", "750px");
-		canvas.setCoordinateSpaceHeight(canvas.getElement().getClientHeight());
-		canvas.setCoordinateSpaceWidth(canvas.getElement().getClientWidth());
+		final Canvas shipCanvas = Canvas.createIfSupported();
+		absolutePanel.add(shipCanvas, 0, 0);
+		shipCanvas.setStyleName("gridObjCanvas");
+		shipCanvas.setSize("750px", "750px");
+		shipCanvas.setCoordinateSpaceHeight(shipCanvas.getElement().getClientHeight());
+		shipCanvas.setCoordinateSpaceWidth(shipCanvas.getElement().getClientWidth());
 		
-		editor = new GridObjHelper(canvas);
+		editor = new GridObjHelper(shipCanvas);
 		/**** Layout Done ****************************************/
 		
-		final ShipViewCanvasControl canvasHelper = new ShipViewCanvasControl(canvas);
+		final ShipViewCanvasControl canvasHelper = new ShipViewCanvasControl(shipCanvas, absolutePanel);
 		
 		MenuItem loadShipMenu = new MenuItem("New Ship", false, new Command() {
 			public void execute() 
@@ -184,8 +185,8 @@ public class ShipViewLayout implements PageLayout {
 	    		if (selected != null) 
 	    		{
 	    			//canvas.setPixelSize(selected.getObjImage().getWidth(), selected.getObjImage().getHeight());
-	    			Vector centerShip = new Vector(canvas.getOffsetWidth()/2 - selected.getObjImage().getWidth()/2,
-	    										   canvas.getOffsetHeight()/2 - selected.getObjImage().getHeight()/2);
+	    			Vector centerShip = new Vector(shipCanvas.getOffsetWidth()/2 - selected.getObjImage().getWidth()/2,
+	    										   shipCanvas.getOffsetHeight()/2 - selected.getObjImage().getHeight()/2);
 	    			canvasHelper.setShipHull(new SpaceShip(selected), centerShip);
 	    		}
 	    	}
